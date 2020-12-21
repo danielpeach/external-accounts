@@ -20,3 +20,5 @@ jobs:
         with:
           delete-branch: true
           labels: metadata-update
+      - name: Merge pull requests
+        uses: pascalgn/automerge-action@v0.13.0
