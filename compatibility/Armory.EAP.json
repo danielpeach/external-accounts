@@ -2,7 +2,83 @@
   "id": "Armory.EAP",
   "releases": [
     {
-      "compatibility": [],
+      "compatibility": [
+        {
+          "outcome": "failure",
+          "platformVersions": [
+            "1.24.0"
+          ],
+          "service": "clouddriver",
+          "version": "7.1.0-20201212030017"
+        },
+        {
+          "outcome": "success",
+          "platformVersions": [
+            "1.23.5"
+          ],
+          "service": "clouddriver",
+          "version": "7.1.0-20201212020017"
+        },
+        {
+          "outcome": "success",
+          "platformVersions": [
+            "1.23.4",
+            "1.23.3"
+          ],
+          "service": "clouddriver",
+          "version": "7.0.3-20201201114456"
+        },
+        {
+          "outcome": "failure",
+          "platformVersions": [
+            "1.22.4",
+            "1.22.3"
+          ],
+          "service": "clouddriver",
+          "version": "6.11.2-20201201112312"
+        },
+        {
+          "outcome": "failure",
+          "platformVersions": [
+            "1.22.2"
+          ],
+          "service": "clouddriver",
+          "version": "6.11.1-20201012160101"
+        },
+        {
+          "outcome": "unknown",
+          "platformVersions": [
+            "1.24.0"
+          ],
+          "service": "fiat",
+          "version": "1.14.1-20201208200018"
+        },
+        {
+          "outcome": "unknown",
+          "platformVersions": [
+            "1.23.5",
+            "1.23.4",
+            "1.23.3",
+            "1.23.2",
+            "1.23.1",
+            "1.23.0"
+          ],
+          "service": "fiat",
+          "version": "1.14.0-20201009170017"
+        },
+        {
+          "outcome": "unknown",
+          "platformVersions": [
+            "1.22.4",
+            "1.22.3",
+            "1.22.2",
+            "1.22.1",
+            "1.22.0"
+          ],
+          "service": "fiat",
+          "version": "1.13.0-20200817170018"
+        }
+      ],
       "version": "0.1.0"
     }
   ]
