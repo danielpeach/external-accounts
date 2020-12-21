@@ -1,0 +1,12 @@
+pull_request_rules:
+  - name: Automatically merge on CI success
+    conditions:
+      - base=master
+#      - status-success=build,it-test
+      - "label=metadata-update"
+    actions:
+      merge:
+        method: squash
+        strict: smart
+      label:
+        add: ["auto merged"]
