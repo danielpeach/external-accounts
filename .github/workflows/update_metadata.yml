@@ -16,6 +16,7 @@ jobs:
           mkdir -p ${{ github.event.client_payload.path }}
           echo '${{ toJson(github.event.client_payload.metadata) }}' > ${{ github.event.client_payload.path }}/${{ github.event.client_payload.file }}
       - name: Create Pull Request
+        id: create-pull-request
         uses: peter-evans/create-pull-request@v3.5.2
         with:
           branch: metadata-updates
@@ -24,3 +25,9 @@ jobs:
         uses: jitterbit/await-check-suites@v1
         with:
           ref: refs/heads/metadata-updates
+      - name: pull-request merge
+        uses: sudo-bot/action-pull-request-merge@v1.1.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ steps.create-pull-request.outputs.pull-request-number }}
+          merge-method: squash
