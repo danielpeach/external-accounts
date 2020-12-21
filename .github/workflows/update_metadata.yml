@@ -19,6 +19,7 @@ jobs:
         id: create-pull-request
         uses: peter-evans/create-pull-request@v3.5.2
         with:
+          token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }} 
           branch: metadata-updates
           delete-branch: true
       - name: Await Check Suites
@@ -28,6 +29,6 @@ jobs:
       - name: pull-request merge
         uses: sudo-bot/action-pull-request-merge@v1.1.1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
           number: ${{ steps.create-pull-request.outputs.pull-request-number }}
           merge-method: squash
