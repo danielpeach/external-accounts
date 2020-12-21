@@ -19,3 +19,4 @@ jobs:
         uses: peter-evans/create-pull-request@v3.5.2
         with:
           delete-branch: true
+          labels: metadata-update
