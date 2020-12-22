@@ -9,9 +9,9 @@ jobs:
     name: Update Metadata ${{ github.event.client_payload.uuid }}
     runs-on: ubuntu-latest
     steps:
-      - name: checkout code
+      - name: Checkout Code
         uses: actions/checkout@v2
-      - name: write metadata
+      - name: Write Metadata
         run: |
           mkdir -p ${{ github.event.client_payload.path }}
           echo '${{ toJson(github.event.client_payload.metadata) }}' > ${{ github.event.client_payload.path }}/${{ github.event.client_payload.file }}
@@ -26,7 +26,7 @@ jobs:
         uses: jitterbit/await-check-suites@v1
         with:
           ref: refs/heads/metadata-updates
-      - name: pull-request merge
+      - name: Merge Pull Request
         uses: sudo-bot/action-pull-request-merge@v1.1.1
         with:
           github-token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
