@@ -27,9 +27,9 @@ jobs:
         with:
           token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
           pull_request_number: ${{ steps.create-pull-request.outputs.pull-request-number }}
-      - name: Merge Pull Request
-        uses: sudo-bot/action-pull-request-merge@v1.1.1
-        with:
-          github-token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
-          number: ${{ steps.create-pull-request.outputs.pull-request-number }}
-          merge-method: squash
+#       - name: Merge Pull Request
+#         uses: sudo-bot/action-pull-request-merge@v1.1.1
+#         with:
+#           github-token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
+#           number: ${{ steps.create-pull-request.outputs.pull-request-number }}
+#           merge-method: squash
