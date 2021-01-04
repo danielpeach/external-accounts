@@ -23,10 +23,10 @@ jobs:
           branch: metadata-updates
           delete-branch: true
       - name: Await Check Suites
-        uses: lewagon/wait-on-check-action@master
+        uses: armory-io/wait-for-required-status-checks@master
         with:
           ref: refs/heads/metadata-updates
-          repo-token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }} 
+          token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }} 
       - name: Merge Pull Request
         uses: sudo-bot/action-pull-request-merge@v1.1.1
         with:
