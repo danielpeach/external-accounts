@@ -25,8 +25,8 @@ jobs:
       - name: Await Check Suites
         uses: armory-io/wait-for-required-status-checks@master
         with:
-          ref: refs/heads/metadata-updates
-          token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }} 
+          token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
+          pull_request_number: ${{ steps.create-pull-request.outputs.pull-request-number }}
       - name: Merge Pull Request
         uses: sudo-bot/action-pull-request-merge@v1.1.1
         with:
